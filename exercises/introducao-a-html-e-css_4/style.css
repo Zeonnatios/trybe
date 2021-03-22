@@ -1,12 +1,25 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   font-family: "Dancing Script", cursive;
   background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd);
   font-size: 14px;
 }
 
+.header {
+  margin: 2%;
+}
+
 .header h1 {
   font-size: 3rem;
   text-align: center;
+}
+
+nav {
+  margin: 2%;
 }
 
 .nav ul {
@@ -40,11 +53,13 @@ hr {
 }
 
 .article h2 {
+  margin: 2%;
   font-size: 2.5rem;
   text-align: center;
 }
 
 .article h3 {
+  margin: 2%;
   font-size: 2rem;
   text-align: center;
 }
@@ -57,6 +72,7 @@ hr {
 }
 
 .article p {
+  margin: 3%;
   font-size: 1.5rem;
   margin-left: 25%;
   margin-right: 25%;
@@ -103,4 +119,14 @@ td {
 
 .links-list ul li a:hover {
   color: #7932e2;
+}
+
+footer {
+  background-color: #26272b;
+  font-size: 1.5rem;
+  color: white;
+  margin-top: 3%;
+  text-align: right;
+  align-items: center;
+  padding: 2%;
 }
