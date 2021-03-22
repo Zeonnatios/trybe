@@ -1,86 +1,106 @@
-body{
-    font-family: 'Dancing Script', cursive;
-    background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd );
-    font-size: 14px;
+body {
+  font-family: "Dancing Script", cursive;
+  background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd);
+  font-size: 14px;
 }
 
-.header h1{
-    font-size: 3rem;
-    text-align: center;
+.header h1 {
+  font-size: 3rem;
+  text-align: center;
 }
 
-.nav ul{
-    text-align: center;
-    font-size: 1.5rem;
+.nav ul {
+  text-align: center;
+  font-size: 1.5rem;
 }
-.nav ul li{
-    display: inline-block;
-    padding: 5px;
-    margin-left: 15px;
+.nav ul li {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 15px;
 }
-.nav ul li a{
-    text-decoration: none;
-    color: black;
-}
-
-.nav ul li a:hover{
-    color: #7932e2;
+.nav ul li a {
+  text-decoration: none;
+  color: black;
 }
 
-hr{
-border-color: #7932e2;
+.nav ul li a:hover {
+  color: #7932e2;
 }
 
-.article a{
-    text-decoration: none;
-
+hr {
+  border-color: #7932e2;
 }
 
-.article a:hover{
-    color: #7932e2;
+.article a {
+  text-decoration: none;
 }
 
-.article h2{
-    font-size: 2.5rem;
-    text-align: center;
+.article a:hover {
+  color: #7932e2;
 }
 
-.article h3{
-    font-size: 2rem;
-    text-align: center;
+.article h2 {
+  font-size: 2.5rem;
+  text-align: center;
 }
 
-.article img{
-    width: 350px;
-    display: block;
-    margin: auto;
-    border: #7932e2 2px solid;
+.article h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.article img {
+  width: 350px;
+  display: block;
+  margin: auto;
+  border: #7932e2 2px solid;
 }
 
 .article p {
-    font-size: 1.5rem;
-    margin-left: 25%;
-    margin-right: 25%;
-    text-align: justify;
+  font-size: 1.5rem;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: justify;
 }
 
-.table{
-    margin: auto;
-    border: solid 1px black;
-    font-size: 1.5rem;
-    table-layout: fixed;
-    width: 50%;  
-    text-align: center;
-    border-collapse: collapse;
+.table {
+  margin: auto;
+  border: solid 1px black;
+  font-size: 1.5rem;
+  table-layout: fixed;
+  width: 50%;
+  text-align: center;
+  border-collapse: collapse;
 }
 
-.table caption{
-    border: solid 1px black;
-    border-bottom: 0px;
-    text-align: center;
-    font-size: 1.8rem;
+.table caption {
+  border: solid 1px black;
+  border-bottom: 0px;
+  text-align: center;
+  font-size: 1.8rem;
 }
 
-.table tr,td {
-    border: 1px solid black;
-  }
+.table tr,
+td {
+  border: 1px solid black;
+}
+
+.links-list ul {
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.links-list ul li {
+  display: inline-block;
+  padding: 5px;
+  margin-left: 15px;
+}
+.links-list ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.links-list ul li a:hover {
+  color: #7932e2;
+}
