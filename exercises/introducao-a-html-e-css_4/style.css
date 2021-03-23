@@ -152,3 +152,12 @@ footer {
   align-items: center;
   padding: 2%;
 }
+
+footer a {
+  text-decoration: none;
+  color: #7932e2;
+  }
+
+  footer a:hover{
+    color: aquamarine;
+  }
