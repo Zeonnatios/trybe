@@ -5,7 +5,7 @@
 
 body {
   font-family: "Dancing Script", cursive;
-  background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd);
+background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd );
   font-size: 14px;
 }
 
@@ -42,6 +42,28 @@ nav {
 
 hr {
   border-color: #7932e2;
+}
+
+main {
+  display: flex;
+}
+
+aside {
+  margin-top: 10%;
+  margin-right: 25px;
+  font-size: 1.4rem;
+}
+
+aside img {
+  border: 2px solid #7932e2;
+  width: 250px;
+  height: 320px;
+  display: block;
+  margin: auto;
+}
+
+article{
+  width: 90%;
 }
 
 .article a {
