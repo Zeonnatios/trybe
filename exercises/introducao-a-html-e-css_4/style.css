@@ -5,7 +5,7 @@
 
 body {
   font-family: "Dancing Script", cursive;
-background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd );
+  background: linear-gradient(0.25turn, #ddd6f3, #d4d3dd);
   font-size: 14px;
 }
 
@@ -62,7 +62,7 @@ aside img {
   margin: auto;
 }
 
-article{
+article {
   width: 90%;
 }
 
@@ -111,13 +111,6 @@ article{
   border-collapse: collapse;
 }
 
-.table caption {
-  border: solid 1px black;
-  border-bottom: 0px;
-  text-align: center;
-  font-size: 1.8rem;
-}
-
 .table tr,
 td {
   border: 1px solid black;
@@ -156,8 +149,8 @@ footer {
 footer a {
   text-decoration: none;
   color: #7932e2;
-  }
+}
 
-  footer a:hover{
-    color: aquamarine;
-  }
+footer a:hover {
+  color: aquamarine;
+}
