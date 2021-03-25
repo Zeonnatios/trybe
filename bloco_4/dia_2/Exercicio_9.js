@@ -1,7 +1,7 @@
 let arr = [];
 
 for (let i = 0; i < 25; i++) {
-  arr.push(Math.ceil(Math.random() * 11));
+  arr.push((Math.ceil(Math.random() * 11))/2);
 }
 
 console.log(arr);
