@@ -1,0 +1,2 @@
+https://github.com/tryber/sd-011-project-playground-functions
+https://github.com/tryber/sd-011-project-lessons-learned
