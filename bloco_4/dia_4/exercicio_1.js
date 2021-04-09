@@ -33,5 +33,9 @@ const character = {
 console.log("\n");
 
 for (const key in info) {
-  console.log(info[key] + ' e ' + character[key]);
+  if (info[key] === character[key]) {
+    console.log("Ambos recorrentes");
+  } else {
+    console.log(info[key] + " e " + character[key]);
+  }
 }
