@@ -6,6 +6,7 @@ document.body.appendChild(elementH1);
 
 // Ex2
 
-const divMainContent = createElement("div");
+const divMainContent = document.createElement("div");
 divMainContent.classList.add("main-content");
 document.body.appendChild(divMainContent);
+
