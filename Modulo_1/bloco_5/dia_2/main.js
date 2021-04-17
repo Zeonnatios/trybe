@@ -82,3 +82,6 @@ divMainContent.removeChild(divLeftContent);
 
 //Ex4
 divRightContent.style.marginRight = "auto";
+
+//Ex5
+divCenterContent.parentNode.style.backgroundColor = "green";
