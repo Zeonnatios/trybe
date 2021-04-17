@@ -25,3 +25,8 @@ divCenterContent.appendChild(paragraph);
 const divLeftContent = document.createElement('div');
 divLeftContent.className = "left-content";
 divMainContent.appendChild(divLeftContent);
+
+//Ex6
+const divRightContent = document.createElement('div');
+divRightContent.className = "right-content";
+divMainContent.appendChild(divRightContent);
