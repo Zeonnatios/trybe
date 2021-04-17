@@ -18,5 +18,10 @@ divMainContent.appendChild(divCenterContent);
 
 //Ex4
 const paragraph = document.createElement("p");
+paragraph.innerText = "Hello World";
 divCenterContent.appendChild(paragraph);
 
+//Ex5
+const divLeftContent = document.createElement('div');
+divLeftContent.className = "left-content";
+divMainContent.appendChild(divLeftContent);
