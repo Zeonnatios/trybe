@@ -97,3 +97,22 @@ function createHolidayButton(feriado) {
 }
 
 createHolidayButton("Feriados");
+
+function displayHolidays() {
+  const button = document.getElementById("btn-holiday");
+  const getHolidays = document.querySelectorAll(".holiday");
+  const bgColor = "rgb(238,238,238)";
+  const originalBgColor = "red";
+
+  button.addEventListener("click", () => {
+    for (let index = 0; index < getHolidays.length; index += 1) {
+      if (getHolidays[index].style.backgroundColor === originalBgColor) {
+        getHolidays[index].style.backgroundColor = bgColor;
+      } else {
+        getHolidays[index].style.backgroundColor = originalBgColor;
+      }
+    }
+  });
+}
+
+displayHolidays();
