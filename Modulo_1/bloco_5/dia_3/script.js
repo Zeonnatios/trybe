@@ -171,3 +171,13 @@ function newTaskSpan(task) {
 }
 
 newTaskSpan("Projeto");
+
+function newTaskDiv(color) {
+  const divTasks = document.querySelector(".my-tasks");
+  const newDiv = document.createElement("div");
+  newDiv.className = "task";
+  newDiv.style.backgroundColor = color;
+  divTasks.appendChild(newDiv);
+}
+
+newTaskDiv("pink");
