@@ -10,3 +10,13 @@ const divMainContent = document.createElement("div");
 divMainContent.classList.add("main-content");
 document.body.appendChild(divMainContent);
 
+//Ex3
+
+const divCenterContent = document.createElement("div");
+divCenterContent.classList.add("center-content");
+divMainContent.appendChild(divCenterContent);
+
+//Ex4
+const paragraph = document.createElement("p");
+divCenterContent.appendChild(paragraph);
+
