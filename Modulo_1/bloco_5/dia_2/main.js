@@ -79,3 +79,6 @@ for (let index = 0; index < elementsH3.length; index += 1) {
 
 //Ex3
 divMainContent.removeChild(divLeftContent);
+
+//Ex4
+divRightContent.style.marginRight = "auto";
