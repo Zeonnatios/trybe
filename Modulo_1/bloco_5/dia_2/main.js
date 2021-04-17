@@ -59,3 +59,12 @@ for (let number in arrayNumbers) {
   ul.appendChild(li);
 }
 divRightContent.appendChild(ul);
+
+//Ex9
+
+// Exercise - 9
+for (let index = 1; index <= 3; index += 1) {
+  const elementH3 = document.createElement("h3");
+  elementH3.innerHTML = "Show " + index;
+  divMainContent.appendChild(elementH3);
+}
