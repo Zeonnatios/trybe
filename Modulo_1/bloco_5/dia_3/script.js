@@ -125,3 +125,22 @@ function createFridayButton(text) {
   divButtonsContainer.appendChild(fridayButton);
 }
 createFridayButton("Sexta-feira");
+
+function displayFridays(fridaysArray) {
+  const button = document.querySelector("#btn-friday");
+  let fridays = document.querySelectorAll(".friday");
+  const text = "Sextou o/";
+
+  button.addEventListener("click", () => {
+    for (let index = 0; index < fridays.length; index += 1) {
+      if (fridays[index].innerHTML === text) {
+        fridays[index].innerHTML = fridaysArray[index];
+      } else {
+        fridays[index].innerHTML = text;
+      }
+    }
+  });
+}
+
+const dezFridays = [4, 11, 18, 25];
+displayFridays(dezFridays);
