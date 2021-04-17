@@ -74,7 +74,7 @@ function checkData() {
 }
 
 function checkData() {
-  const inputData = document.querySelector('.input-data');
+  const inputData = document.querySelector('#input-data');
   let data = inputData.value;
   const userData = validateData(data);
   if (!userData && data.length) {

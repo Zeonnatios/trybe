@@ -104,11 +104,23 @@
         <label class="label">Tipo de imóvel: </label>
         <div class="control">
           <label class="radio">
-            <input type="radio" name="moradia" id="casa" value="Casa" />Casa
+            <input
+              type="radio"
+              name="moradia"
+              id="casa"
+              value="Casa"
+              required
+            />Casa
           </label>
 
           <label class="radio">
-            <input type="radio" name="moradia" id="apt" value="Apartamento" />
+            <input
+              type="radio"
+              name="moradia"
+              id="apt"
+              value="Apartamento"
+              required
+            />
             Apartamento
           </label>
         </div>
@@ -158,6 +170,7 @@
         <div class="control">
           <label class="label">Data de início: </label>
           <input
+            id="input-data"
             type="text"
             class="input"
             name="start-date"
@@ -167,11 +180,13 @@
         </div>
       </div>
 
-      <button class="button is-success submit-button" type="submit">Enviar</button>
+      <button class="button is-success submit-button" type="submit">
+        Enviar
+      </button>
       <button class="button is-info clear-button" type="reset">Limpar</button>
     </form>
 
-    <section class=""></section>
+    <section class="form-data"></section>
 
     <script src="script.js"></script>
   </body>
