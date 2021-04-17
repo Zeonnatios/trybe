@@ -85,3 +85,7 @@ divRightContent.style.marginRight = "auto";
 
 //Ex5
 divCenterContent.parentNode.style.backgroundColor = "green";
+
+//Ex6
+ul.lastChild.remove();
+ul.lastChild.remove();
