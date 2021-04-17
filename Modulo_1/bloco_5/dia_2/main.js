@@ -76,3 +76,6 @@ const elementsH3 = document.getElementsByTagName("h3");
 for (let index = 0; index < elementsH3.length; index += 1) {
   elementsH3[index].classList.add("description");
 }
+
+//Ex3
+divMainContent.removeChild(divLeftContent);
