@@ -88,11 +88,11 @@ function createDaysOfTheMonth() {
 
 createDaysOfTheMonth();
 
-function createHolidayButton(feriado) {
+function createHolidayButton(text) {
   const divButtonContainer = document.querySelector(".buttons-container");
   const button = document.createElement("button");
   button.id = "btn-holiday";
-  button.innerText = feriado;
+  button.innerText = text;
   divButtonContainer.appendChild(button);
 }
 
@@ -116,3 +116,12 @@ function displayHolidays() {
 }
 
 displayHolidays();
+
+function createFridayButton(text) {
+  const divButtonsContainer = document.querySelector(".buttons-container");
+  const fridayButton = document.createElement("button");
+  fridayButton.innerText = text;
+  fridayButton.id = "btn-friday";
+  divButtonsContainer.appendChild(fridayButton);
+}
+createFridayButton("Sexta-feira");
