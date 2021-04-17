@@ -162,3 +162,12 @@ function dayMouseOut() {
 
 dayMouseOver();
 dayMouseOut();
+
+function newTaskSpan(task) {
+  const divTasks = document.querySelector(".my-tasks");
+  const span = document.createElement("span");
+  span.innerHTML = task;
+  divTasks.appendChild(span);
+}
+
+newTaskSpan("Projeto");
