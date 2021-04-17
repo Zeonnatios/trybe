@@ -36,3 +36,26 @@ const image = document.createElement("img");
 image.src = "https://picsum.photos/200";
 image.className = "small-image";
 divLeftContent.appendChild(image);
+
+//Ex8
+const ul = document.createElement("ul");
+
+const arrayNumbers = [
+  "Um",
+  "Dois",
+  "Três",
+  "Quatro",
+  "Cinco",
+  "Seis",
+  "Sete",
+  "Oito",
+  "Nove",
+  "Dez",
+];
+
+for (let number in arrayNumbers) {
+  const li = document.createElement("li");
+  li.innerText = arrayNumbers[number];
+  ul.appendChild(li);
+}
+divRightContent.appendChild(ul);
