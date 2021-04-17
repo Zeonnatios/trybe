@@ -70,3 +70,9 @@ for (let index = 1; index <= 3; index += 1) {
 //Parte 2
 //Ex1
 elementH1.classList.add("title");
+
+//Ex2
+const elementsH3 = document.getElementsByTagName("h3");
+for (let index = 0; index < elementsH3.length; index += 1) {
+  elementsH3[index].classList.add("description");
+}
