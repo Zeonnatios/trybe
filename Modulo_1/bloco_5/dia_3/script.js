@@ -144,3 +144,21 @@ function displayFridays(fridaysArray) {
 
 const dezFridays = [4, 11, 18, 25];
 displayFridays(dezFridays);
+
+function dayMouseOver() {
+  const days = document.querySelector("#days");
+  days.addEventListener("mouseover", (event) => {
+    event.target.style.fontSize = "30px";
+    event.target.style.fontWeight = "600";
+  });
+}
+function dayMouseOut() {
+  const days = document.querySelector("#days");
+  days.addEventListener("mouseout", (event) => {
+    event.target.style.fontSize = "20px";
+    event.target.style.fontWeight = "200";
+  });
+}
+
+dayMouseOver();
+dayMouseOut();
