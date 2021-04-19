@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/bulma.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css"
+    />
     <title>Bloco 6 - dia 1</title>
   </head>
   <body>
@@ -148,6 +153,7 @@
             name="position"
             id="position"
             maxlength="40"
+            placeholder="Cargo"
             required
           />
         </div>
@@ -161,6 +167,7 @@
             type="text"
             id="description"
             name="description"
+            placeholder="Descrição do Cargo"
             required
           />
         </div>
@@ -170,11 +177,11 @@
         <div class="control">
           <label class="label">Data de início: </label>
           <input
-            id="input-data"
-            type="text"
             class="input"
-            name="start-date"
-            value=""
+            type="text"
+            placeholder="DD/MM/AAAA"
+            id="datepicker"
+            name="input-data"
             required
           />
         </div>
@@ -189,5 +196,12 @@
     <section class="form-data"></section>
 
     <script src="script.js"></script>
+    <script src="moments.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <script>
+      picker = new Pikaday({ field: document.getElementById("datepicker") });
+    </script>
+    <script src="./node_modules/just-validate/dist/js/just-validate.js"></script>
+    </body>
   </body>
 </html>

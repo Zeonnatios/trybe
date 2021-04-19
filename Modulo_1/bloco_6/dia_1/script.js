@@ -42,92 +42,44 @@ function insertStates(estados) {
 
 insertStates(estados);
 
+
+insertStates(estados);
+
+const picker = new Pikaday({
+  field: document.getElementById("datepicker"),
+  format: "DD/MM/YYYY",
+  toString(date, format) {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  },
+  parse(dateString, format) {
+    const parts = dateString.split("/");
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1;
+    const year = parseInt(parts[2], 10);
+    return new Date(year, month, day);
+  },
+});
+
 function createCurriculum() {
-  button.addEventListener("click", () => {
-    
-  });
+  button.addEventListener("click", () => {});
 }
 
-function validateData(data) {
-  if (data.indexOf('/') === 2 || data.indexOf('/') === 5) {
-    const day = data.substr(0, 2);
-    const month = data.substr(3, 2);
-    const year = data.substr(6, 4);
-    if ((day > 0 && day <= 31) 
-    && (month > 0 && month <= 12) && (year >= 0 && year.length === 4)) {
-      return true;
-    }
-  }
-  return false;
-}
-
-function checkData() {
-  const inputData = document.querySelector('.input-data');
-  let data = inputData.value;
-  const userData = validateData(data);
-  if (!userData && data.length) {
-    inputData.value = '';
-    alert('data invalida');
-    return false;
-  }
-  return userData;
-}
-
-function checkData() {
-  const inputData = document.querySelector('#input-data');
-  let data = inputData.value;
-  const userData = validateData(data);
-  if (!userData && data.length) {
-    inputData.value = '';
-    alert('data invalida');
-    return false;
-  }
-  return userData;
-}
-
-function checkEmail() {
-  const email = document.querySelector('#email-input');
-  let insertedEmail = email.value;
-  const emailFormat = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+$/.test(insertedEmail);
-  if (!emailFormat && insertedEmail.length) {
-    email.value = '';
-    alert('email inválido');
-    return false;
-  }
-  return emailFormat
-}
-
-function renderCurriculum(event) {
-  event.preventDefault();
-  const formElements = document.querySelectorAll('input');
-  for (let index = 0; index < formElements.length; index += 1) {
-    if (formElements[index].type === 'radio' && !formElements[index].checked) {
-      continue;
-    }
-    const userInput = formElements[index].value;
-    const dataUser = document.querySelector('.form-data');
-    if (checkEmail() && checkData()) {
-      const div = document.createElement('div');
-      div.className = 'div-curriculum';
-      div.innerHTML = userInput;
-      dataUser.appendChild(div);
-    }
-  }
-}
-
-const clearButton = document.querySelector('.clear-button');
+const clearButton = document.querySelector(".clear-button");
 function clearFields() {
-  const formElements = document.querySelectorAll('input');
-  const textArea = document.querySelector('textarea')
-  const div = document.querySelectorAll('.div-curriculum');
-  for (let index = 0; index < formElements.length && index < div.length; index += 1) {
+  const formElements = document.querySelectorAll("input");
+  const textArea = document.querySelector("textarea");
+  for (
+    let index = 0;
+    index < formElements.length && index < div.length;
+    index += 1
+  ) {
     const userInput = formElements[index];
-    userInput.value = '';
-    textArea.value = '';
-    div[index].innerText = '';
+    userInput.value = "";
+    textArea.value = "";
   }
 }
+clearButton.addEventListener("click", clearFields);
 
-const submitButton = document.querySelector('.submit-button');
-submitButton.addEventListener('click', renderCurriculum);
-clearButton.addEventListener('click', clearFields);
