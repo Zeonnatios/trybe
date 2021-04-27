@@ -36,3 +36,6 @@ console.log(objValues(lesson1));
 
 const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 console.log(allLessons);
+
+const getValueByIndex = (obj, index) => Object.values(obj)[index];
+console.log(getValueByIndex(lesson1, 0));
