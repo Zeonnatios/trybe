@@ -58,10 +58,25 @@ const getNumberOfStudents = (obj) => {
   let total = 0;
   const array = Object.keys(obj);
   for (index in array) {
-    if(obj[array[index]].materia === 'Matemática'){
-    total += obj[array[index]].numeroEstudantes;
+    if (obj[array[index]].materia === 'Matemática') {
+      total += obj[array[index]].numeroEstudantes;
     }
   }
   return total;
-}
+};
 console.log(getNumberOfStudents(allLessons));
+
+const createReport = (obj, nome) => {
+  const relatorio = {};
+  const array = Object.keys(obj);
+  for (index in array) {
+    if (obj[array[index]].professor === nome) {
+      relatorio.professor = nome;
+      relatorio.aulas = obj[array[index]].materia;
+      relatorio.estudantes = getNumberOfStudents(allLessons);
+    }
+  }
+  return relatorio;
+};
+
+console.log(createReport(allLessons, 'Maria Clara'));
