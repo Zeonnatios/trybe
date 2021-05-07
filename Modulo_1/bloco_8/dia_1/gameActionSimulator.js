@@ -28,3 +28,20 @@ const warriorDamage = (warrior) => {
   const minDmg = warrior.strength;
   return Math.floor(Math.random() * (maxDmg - minDmg) + minDmg);
 };
+
+const mageDamage = (mage) => {
+  const turnStats = {
+    manaGasta: 0,
+    danoCausado: 'Sem mana suficiente...',
+  };
+  const minDmg = mage.intelligence;
+  const maxDmg = mage.intelligence * 2;
+  const mana = mage.mana;
+
+  if (mana >= 15) {
+    const damage = Math.floor(Math.random() * (maxDmg - minDmg) + minDmg);
+    turnStats.danoCausado = damage;
+    turnStats.manaGasta = 15;
+  }
+  return turnStats;
+};
