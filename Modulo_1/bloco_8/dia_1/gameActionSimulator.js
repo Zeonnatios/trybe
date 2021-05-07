@@ -39,9 +39,37 @@ const mageDamage = (mage) => {
   const mana = mage.mana;
 
   if (mana >= 15) {
-    const damage = Math.floor(Math.random() * (maxDmg - minDmg) + minDmg);
-    turnStats.danoCausado = damage;
+    turnStats.danoCausado = Math.floor(
+      Math.random() * (maxDmg - minDmg) + minDmg
+    );
     turnStats.manaGasta = 15;
+    return turnStats;
   }
   return turnStats;
 };
+
+const gameActions = {
+  warriorTurn: (warriorDamage) => {
+    const warriorDamage = warriorDamage(warrior);
+    warrior.damage = damage;
+    dragon.healthPoints -= warriorDamage;
+  },
+  mageTurn: (mageDamage) => {
+    const mageMovement = mageDamage(mage);
+    dragon.healthPoints -= mageMovement.danoCausado;
+    mage.damage = mageMovement.danoCausado;
+    mage.mana = mageMovement.manaGasta;
+  },
+  dragonTurn: (dragonDamage) => {
+    const dragonDamage = dragonDamage();
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+    dragon.damage = dragonDamage;
+  },
+  turnResults: () => battleMembers,
+};
+
+gameActions.warriorTurn(warriorDamage);
+gameActions.mageTurn(mageDamage);
+gameActions.dragonTurn(dragonDamage);
+gameActions.turnResults(battleMembers);
