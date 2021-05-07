@@ -63,15 +63,10 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook;
-  console.log(!nameBook)
-  books.forEach((book) => {
-    if (book.name.length < nameBook.length) {
-      nameBook = book.name;
-    }
-  });
-  return nameBook;
+const expectedResult = false;
+
+function authorUnique() {
+  // escreva seu código aqui
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.strictEqual(authorUnique(), expectedResult);

@@ -63,15 +63,19 @@ const books = [
   },
 ];
 
-function smallerName() {
-  let nameBook;
-  console.log(!nameBook)
-  books.forEach((book) => {
-    if (book.name.length < nameBook.length) {
-      nameBook = book.name;
-    }
-  });
-  return nameBook;
+const expectedResult = {
+  author: {
+    birthYear: 1948,
+    name: 'George R. R. Martin',
+  },
+  genre: 'Fantasia',
+  id: 1,
+  name: 'As Crônicas de Gelo e Fogo',
+  releaseYear: 1991,
+};
+
+function getNamedBook() {
+  // escreva seu código aqui
 }
 
-assert.strictEqual(smallerName(), 'Duna');
+assert.deepStrictEqual(getNamedBook(), expectedResult);
