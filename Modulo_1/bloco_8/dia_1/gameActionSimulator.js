@@ -19,3 +19,7 @@ const dragon = {
 };
 
 const battleMembers = { mage, warrior, dragon };
+
+const dragonAttack = () => Math.floor(Math.random() * (50 - 15) + 15);
+
+console.log(dragonAttack());
