@@ -16,7 +16,7 @@ const newPlayers = players.reduce((playerAccumulator, player) => {
 
 //Teste
 
-console.table(newPlayers);
+console.log(newPlayers);
 
 const expectedValues = {
   'criscris@futebol.br': 'Cristiane Rozeira de Souza Silva',
