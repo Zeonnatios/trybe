@@ -86,15 +86,9 @@ function triangleCheck(lineA, lineB, lineC) {
 // Desafio 13
 function hydrate(string) {
   // seu código aqui
-  return string.match(/\d+/g).reduce((acc, curr) => {
-    acc + parseInt(curr, 10);
-    return acc;
-  }, 0);
-
+  const water = string.match(/\d+/g).reduce((acc, curr) => acc + parseInt(curr, 10) , 0);
+  return water <= 1 ? `${water} copo de água` : `${water} copos de água`
 }
-
-console.log(hydrate('15 cerveja, 2 shots e 1 catuaba'));
-
 
 function decode(phrase) {
   return phrase.split('').map((value) => {
