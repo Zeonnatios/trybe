@@ -63,7 +63,12 @@ function encode(phrase) {
 // Desafio 10
 function techList(arr, name) {
   // seu código aqui
-  return arr.sort().reduce((acc, curr) => acc.concat({tech: curr, name}),[])
+  return arr === null || arr.length === 0
+    ? 'Vazio!'
+    : arr.sort().reduce((acc, curr, index) => {
+        acc[index] = { tech: arr[index], name: name };
+        return acc;
+      }, []);
 }
 
 // Desafio 11
