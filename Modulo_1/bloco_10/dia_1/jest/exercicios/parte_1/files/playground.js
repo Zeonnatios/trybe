@@ -66,7 +66,7 @@ function techList(arr, name) {
   return arr === null || arr.length === 0
     ? 'Vazio!'
     : arr.sort().reduce((acc, curr, index) => {
-        acc[index] = { tech: arr[index], name: name };
+        acc[index] = { tech: curr, name: name };
         return acc;
       }, []);
 }
@@ -86,8 +86,14 @@ function triangleCheck(lineA, lineB, lineC) {
 // Desafio 13
 function hydrate(string) {
   // seu código aqui
-  return string.split(' ').map(Number).filter(Number).reduce((acc, curr) => acc + curr , 0) === 1 ? `1 copo de água` : `${string.split(' ').map(Number).filter(Number).reduce((acc, curr) =>  acc + curr, 0)} copos de água`;
+  return string.match(/\d+/g).reduce((acc, curr) => {
+    acc + parseInt(curr, 10);
+    return acc;
+  }, 0);
+
 }
+
+console.log(hydrate('15 cerveja, 2 shots e 1 catuaba'));
 
 
 function decode(phrase) {
