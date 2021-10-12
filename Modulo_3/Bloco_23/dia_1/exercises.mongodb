@@ -1,15 +1,177 @@
+use class;
+//1
+db.movies.update(
+  {title: "Batman"},
+  { $set: {imdbRating: 7.7 }}
+);
+//or
+db.movies.updateOne(
+  { title: "Batman" },
+  { $set: { imdbRating: 7.7 } },
+);
 
-use("bios");
-db.bios.find({"_id": 8});
-db.bios.find({ _id: 8 }, { name: 1 });
-db.bios.find({ _id: 8 }, { name: 1, birth: 1, _id: 0 });
-db.bios.find({ "name.first": "John" }).pretty();
-db.bios.find().limit(3).pretty();
-db.bios.find().skip(5).limit(2);
-db.bios.count();
+//2
+db.movies.updateOne(
+  { title: "Godzilla" },
+  { $set: { budget: 1 } },
+);
 
-use("books");
-db.books.count({ "status": "PUBLISH" });
-db.books.find({"title": 1, "isbn": 1, "pageCount": 1}).limit(3);
-db.books.find({},{"_id":0, "title": 1, "isbn": 1, "pageCount": 1}).limit(3);
-db.books.find({"status": "MEAP"},{"title": 1, "authors": 1, "status": 1}).skip(5).limit(10).pretty();
+//3
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $set: { 
+      budget: 15,
+      imdbRating: 5.5
+    } 
+  },
+);
+
+//4
+db.movies.updateOne(
+  { title: "Batman"},
+  { $inc: { imdbRating: 2, }}
+);
+
+//5
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $inc: { budget: 5, }}
+);
+
+//6
+db.movies.updateOne(
+  { title: "Batman"},
+  { $mul: { imdbRating: 4 }}
+);
+
+//7
+db.movies.updateOne(
+  { title: "Batman"},
+  { $rename: { "budget": "estimatedBudget" }}
+);
+
+//8
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $min: { budget: 5 } },
+);
+
+//9
+db.movies.updateOne(
+  { title: "Godzilla" },
+  { 
+    $max: { imdbRating: 8.6 },
+    $set: { "category.1": "thriller" },
+  }
+);
+
+//10
+db.movies.updateOne(
+  { title: "Home Alone" },
+  { $currentDate: { lastUpdated: { $type: "timestamp" } } }
+);
+
+//11
+db.movies.updateMany(
+  {},
+  { $set: { sequels: 0 } }
+);
+
+//12
+db.movies.updateMany(
+  {},
+  { $unset: { estimatedBudget: "", budget: "" } }
+);
+
+//13
+db.movies.updateMany(
+  {
+    $or: [
+      { title: "Batman" },
+      { title: "Home Alone" },
+    ],
+  },
+  {
+    $max: { imdbRating: 17 }
+  }
+);
+
+//Bonus
+//14
+db.xmen.updateMany(
+  { class: "unknown" },
+  { 
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $unset: { class: "" }, 
+  },
+);
+
+//15
+db.xmen.updateMany(
+  {},
+  {    
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $rename: { 
+      "name": "hero_name",
+      "true_name": "full_name"
+    },
+    $set: { power: 100 }, 
+  },
+);
+
+//16
+db.xmen.updateMany(
+  // or { class: { $in: ["omega", "gama"] } },
+  {
+    $or: [
+      { class: "omega" },
+      { class: "gama" },
+    ],
+  },
+
+  {
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $max: { power: 500 }
+  },
+);
+
+//17
+db.xmen.updateMany(
+  { class: "gama" },
+  {
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $min: { power: 300}
+  }
+);
+
+//18
+db.xmen.updateMany(
+  { class: { $exists: false } },
+  {
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $inc: { power: -100 }
+  }
+);
+
+//19
+db.xmen.updateMany(
+  {
+    $or:[
+      { occupation: "Senior Staff", power: { $gt: 100 }  },
+      { occupation: "Junior Staff", power: { $gt: 200 }  },
+    ]
+  },
+  {
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $set: { areas: ["Students Room"] },
+  }
+);
+
+//20
+db.xmen.updateMany(
+  { occupation: "Junior Staff", areas: { $exists: false } },
+  {
+    $currentDate: { lastUpdate: { $type: "timestamp" } },
+    $set: { areas: ["Outside"] },
+  }
+);
