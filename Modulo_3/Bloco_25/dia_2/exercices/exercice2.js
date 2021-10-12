@@ -12,10 +12,19 @@ const generateRandomNumber = () => {
   return Math.floor(Math.random() * 10 + 1);
 }
 
-const a = generateRandomNumber();
-const b = generateRandomNumber();
-const c = generateRandomNumber();
+const callFunction = async () => {
+  
+  const a = generateRandomNumber();
+  const b = generateRandomNumber();
+  const c = generateRandomNumber();
+  
+  try {
+    const result = await calcMath(a, b, c);
+    console.log(`Resultado: ${result}`);
+  } catch (err) {
+    console.error(err);
+  }
 
-calcMath(a, b, c)
-  .then((resolve) => console.log(resolve))
-  .catch((reject) => console.log(reject));
+};
+
+callFunction();
