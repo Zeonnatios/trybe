@@ -2,7 +2,7 @@ const fs = require('fs').promises;
 
 const text = "Matheus Antonio da Silva,\n" +
   "21 anos,\n" +
-  "estudante de Desenvolvimento Web Full Stack pela Trybe";
+  "estudante de Desenvolvimento Web Full Stack pela Trybe!";
 
 fs.writeFile('./newFile.txt', text)
   .then(() => {
