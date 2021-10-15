@@ -1,10 +1,13 @@
-const simpsonsUtils = require('./fs-utils');
 const rescue = require('express-rescue');
 const express = require('express');
+const authMiddleware = require('./authMiddleware');
+const simpsonsUtils = require('./fs-utils');
+const generateToken = require('./generateToken');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+//app.use(authMiddleware);
 
 //endpoints
 
@@ -25,16 +28,14 @@ app.post('/greetings', (req, res) => {
   const { name, age } = req.body;
 
   if(parseInt(age) <= 17) return res.status(401).json({ "message": "Unauthorized" });
-
-  res.status(200).json({ "message": `Hello, ${name}!` });
   
+  res.status(200).json({ "message": `Hello, ${name}!` });
 });
 
 // /users/:name/:age
 
 app.put('/users/:name/:age/', (req, res) => {
   const {name, age} = req.params;
-
   res.json({ "message": `Seu nome é ${name} e você tem ${age} anos de idade!` });
 });
 
@@ -43,9 +44,9 @@ app.put('/users/:name/:age/', (req, res) => {
 
 app.get('/simpsons', rescue(async (req, res) => {
   const simpsons = await simpsonsUtils.getSimpsons();
-
   res.status(200).json(simpsons);
 }));
+
 
 app.get('/simpsons/:id', rescue(async (req, res) => {
 
@@ -56,7 +57,6 @@ app.get('/simpsons/:id', rescue(async (req, res) => {
 
   if(!character) return res.status(404).json({ message: 'simpson not found' });
   return res.status(200).json(character);
-
 }));
 
 app.post('/simpsons', rescue(async(req, res) => {
@@ -71,8 +71,21 @@ app.post('/simpsons', rescue(async(req, res) => {
   await simpsonsUtils.setSimpsons(simpsons);
 
   res.status(204).end();
-
 }));
+
+//signup
+app.post('/signup', (req, res) => {
+  const { email , password , firstName, phone } = req.body;
+
+  if([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'missing fields' });
+  }
+
+  const token = generateToken();
+
+  return res.status(200).json({token});
+
+});
 
 
 //Final Script
