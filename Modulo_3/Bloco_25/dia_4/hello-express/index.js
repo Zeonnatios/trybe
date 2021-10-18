@@ -1,6 +1,4 @@
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
@@ -36,6 +34,16 @@ app.get('/validateToken', (req, res) => {
   Recipes routes
 */
 
+const validatePrice = (req, res, next) => {
+
+  const { price } = req.body;
+  
+  if(!price || typeof price !== 'number' || price < 0) {
+    return res.status(400).json({ message: 'Invalid data!'});
+  }
+  next();
+};
+
 app.get('/recipes', (_req, res) => {
   res.json(recipes).status(200);
 });
@@ -50,19 +58,19 @@ app.get('/recipes/:id', (req, res) => {
   res.json(recipe).status(200);
 });
 
-app.get('/recipes/search', function (req, res) {
+app.get('/recipes/search', (req, res) => {
   const { name, maxPrice } = req.query;
   const filteredRecipes = recipes.filter((r) => r.name.includes(name) && r.price < parseInt(maxPrice));
   res.status(200).json(filteredRecipes);
 });
 
-app.post('/recipes', (req, res) => {
+app.post('/recipes', validatePrice, (req, res) => {
   const { id, name, price } = req.body;
   recipes.push({ id, name, price});
   res.status(201).json({ message: 'Recipe created successfully!', values: {id, name, price}});
 });
 
-app.put('/recipes/:id', (req, res) => {
+app.put('/recipes/:id', validatePrice, (req, res) => {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((r) => r.id === parseInt(id));
