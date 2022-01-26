@@ -1,5 +1,5 @@
 class Circulo:
-    PI = 3.14
+    PI = 3.14159
 
     def __init__(self, raio):
         self.raio = raio
