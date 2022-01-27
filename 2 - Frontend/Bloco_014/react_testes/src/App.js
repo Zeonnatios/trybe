@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const App = () => {
+function App() {
   const [taskList, setTaskList] = useState([]);
   const [task, setTask] = useState("");
 
@@ -21,7 +21,7 @@ const App = () => {
           Task:
         </label>
           <input 
-            data-testid="input-task"
+            data-testid="task-input"
             type="text" 
             name="task" 
             id="task"
@@ -29,7 +29,7 @@ const App = () => {
             onChange={handleChange}
            />
         <input 
-            data-testid="input-button"
+            data-testid="task-input-button"
             type="button" 
             value="Add Todo"
             onClick={addTask}
