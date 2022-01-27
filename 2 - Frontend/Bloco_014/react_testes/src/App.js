@@ -38,7 +38,7 @@ function App() {
           <h2 data-testid="task-title">Todos</h2>
             <ul data-testid="task-list">
               {taskList.length > 0 && (
-                taskList.map((task, index) => <li data-testid={`task-index-${index}`} key={index}>{task}</li>)
+                taskList.map((task, index) => <li data-testid={`task-element`} key={index}>{task}</li>)
                 )
               }
             </ul>
