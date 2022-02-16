@@ -41,7 +41,7 @@ def binary_search_iterative(array, element):
 
     while start <= end:
         print(
-            "Subarray in step {}: {}".format(step, str(array[start : end + 1]))
+            "Subarray in step {}: {}".format(step, str(array[start: end + 1]))
         )
         step = step + 1
         mid = (start + end) // 2
