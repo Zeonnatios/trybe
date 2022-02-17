@@ -24,7 +24,7 @@ dominios = []
 
 for god in pantheon_of_arton:
     dominios.append(god["domínio"])
-print(dominios)
+print(f"dominios: {dominios}")
 
 domains = [god for god in pantheon_of_arton if god["domínio"] != "Tormenta"]
 print(domains)
